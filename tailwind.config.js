@@ -6,11 +6,23 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    fontFamily: {
+      poppins: ['Poppins', 'sans-serif'],       // Correct
+      roboto: ['Roboto', 'sans-serif'],       // Correct
+      nunito: ['"Nunito Sans"', 'sans-serif'],  // Correct, because "Nunito Sans" has a space
+      inter: ['Inter', 'sans-serif'],           // Correct
+      lato: ['Lato', 'serif'],                  // Correct (Lato is a single word)
+      rubic: ['Rubik', 'serif'],                // Correct (Rubic is a single word)
+    },
     extend: {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      boxShadow:{
+        outer:"6px 6px 12px #b8b9be,-6px -6px 12px white",
+        inside:"inset 2px 6px 12px #b8b9be, inset -2px -6px 12px #b8b9be",
+      }
     },
   },
   plugins: [],
