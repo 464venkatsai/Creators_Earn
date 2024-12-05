@@ -1,5 +1,6 @@
+
 import About from "./components/About";
-import Creator from "./components/Creator";
+import Creator from "./components/BecomeaCreator";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 

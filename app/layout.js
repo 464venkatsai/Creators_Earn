@@ -1,3 +1,4 @@
+import ContextWrapper from "./components/ContextWapper";
 import "./globals.css";
 
 
@@ -16,7 +17,9 @@ export default function RootLayout({ children }) {
       </head>
       <body
         className={`antialiased`}>
-        {children}
+          <ContextWrapper>
+            {children}
+          </ContextWrapper>
       </body>
     </html>
   );

@@ -2,6 +2,9 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+:root{
+  --filterval : 45%;
+}
 .text-gradient {
     background-image: linear-gradient(to right, blue, aqua,blue); 
     -webkit-background-clip: text; 
@@ -52,4 +55,40 @@
   html::-webkit-scrollbar,
   body::-webkit-scrollbar {
     display: none;
+  }
+  .nav-item-creator{
+    display: flex;
+    gap: 10px;
+    padding: 10px 8px;
+    align-items: center;
+    font-size: small;
+    font-weight: 600;
+    cursor: pointer;
+    color: #555555;
+  }
+  .nav-item-creator:hover,.nav-item-creator.active{
+    background-color: rgba(217, 221, 225, 0.323);
+    color: black;
+    border-radius: 5px;
+    --filterval : 0
+  }
+
+  .nav-item-creator img{
+    filter: invert(var(--filterval));
+  }
+
+  .scrollable-none::-webkit-scrollbar{
+    display: none;
+  }
+  .alert{
+    animation: moveLineBottom 2.5s linear;
+    width: 0;
+  }
+  @keyframes moveLineBottom{
+    0%{
+      width: 99%;
+    }
+    100%{
+      width: 0%;
+    }
   }
