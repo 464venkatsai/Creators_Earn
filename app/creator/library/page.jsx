@@ -1,11 +1,17 @@
-import React from 'react'
+"use client"
+import { useRouter } from 'next/navigation'
+import React, { useEffect } from 'react'
 
-const Libarary = () => {
+const Library = () => {
+  const router = useRouter();
+  useEffect(() => {
+      router.replace("/creator/library/posts")
+  }, [router])
   return (
     <div>
-      <h1>Libarary</h1>
+        
     </div>
   )
 }
 
-export default Libarary
+export default Library;

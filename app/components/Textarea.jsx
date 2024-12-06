@@ -6,7 +6,7 @@ const Textarea = ({blog,setBlog}) => {
   return (
     <div>
       <textarea
-        className="w-full min-h-screen bg-white shadow-lg p-[5rem] outline-none font-poppins scrollable-none "
+        className="w-full min-h-screen bg-white shadow-lg p-[5rem] leading-loose outline-none font-poppins scrollable-none "
         name="description"
         value={blog.description}
         placeholder="Your Supports Are Waiting For Your Content."

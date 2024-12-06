@@ -11,7 +11,7 @@ const CreatorNavBar = () => {
   console.log(activeNavLink)
   }, [activeNavLink])
   return (
-    <nav className="flex flex-col p-5 items-start justify-between min-h-screen bg-white">
+    <nav className="flex flex-col p-5 items-start justify-between min-h-screen bg-white z-[100]">
       <section className="w-full">
         <div className="text-2xl font-poppins font-semibold mb-10 p-[10px]">
           Creators <span className="text-gradient">Earn</span>
@@ -21,7 +21,7 @@ const CreatorNavBar = () => {
             const normalizedName = name.replace(" ", "").toLowerCase();
             return (
               <div key={id} onClick={()=>setactiveNavLink(normalizedName)} className="w-full">
-                <Link href={id===0 ? "/creator/venkatsai":normalizedName}>
+                <Link href={id===0 ? "/creator/venkatsai":`/creator/${normalizedName}`}>
                   <li className={`nav-item-creator flex ${normalizedName===activeNavLink?"active":""}`}>
                     <div>
                       <img src={`/${icon}`} width={20} />
@@ -36,7 +36,7 @@ const CreatorNavBar = () => {
             <button className="w-full border-[1px] rounded-lg border-solid border-gray-400 flex items-center justify-center leading-tight font-poppins font-[500] text-sm px-5 py-3 gap-2 hover:bg-[whitesmoke]">
               <img src="/create.svg" alt="create.svg" width={20}/>
               <h3 className="">Create</h3>
-          </button>
+            </button>
           </Link>
         </ul>
       </section>
