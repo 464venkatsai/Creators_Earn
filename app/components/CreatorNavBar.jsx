@@ -1,7 +1,7 @@
 "use client"
 import { creatorNavbarItems } from "@/data";
 import Link from "next/link";
-import React, { useContext, useEffect, useState } from "react";
+import React, { memo, useContext, useEffect, useState } from "react";
 import { UserContext } from "../context/context";
 
 const CreatorNavBar = () => {
@@ -53,4 +53,4 @@ const CreatorNavBar = () => {
   );
 };
 
-export default CreatorNavBar;
+export default memo(CreatorNavBar);

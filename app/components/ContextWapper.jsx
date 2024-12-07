@@ -1,6 +1,6 @@
 "use client";
 import { SessionProvider } from "next-auth/react";
-import React, { useEffect, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 import { AlertContext, UserContext } from "../context/context";
 import ShowAlert from "./ShowAlert";
 
@@ -10,7 +10,7 @@ const ContextWrapper = ({ children }) => {
     className: "",
     time: 0,
   });
-  const [user, setUser] = useState({ name: "", username: "", email: "" });
+  const [user, setUser] = useState({ name: "", username: "", email: "",id:"A464Venkatsai"});
 
   useEffect(() => {
     setTimeout(() => {
@@ -31,4 +31,4 @@ const ContextWrapper = ({ children }) => {
   );
 };
 
-export default ContextWrapper;
+export default memo(ContextWrapper);

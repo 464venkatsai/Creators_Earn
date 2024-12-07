@@ -1,6 +1,6 @@
 "use client"
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { memo, useState } from 'react'
 
 const LibraryNavbar = () => {
   const [activeLibary, setactiveLibary] = useState("posts")
@@ -22,4 +22,4 @@ const LibraryNavbar = () => {
   )
 }
 
-export default LibraryNavbar
+export default memo(LibraryNavbar)

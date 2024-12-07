@@ -1,7 +1,7 @@
 "use client"
 import { UserContext } from "@/app/context/context";
 import Link from "next/link";
-import React, { useContext, useEffect } from "react";
+import React, { memo, useContext, useEffect } from "react";
 
 const User = ({ params }) => {
   const username = React.use(params).username;
@@ -44,4 +44,4 @@ const User = ({ params }) => {
     </div>
   );
 };
-export default User;
+export default memo(User);

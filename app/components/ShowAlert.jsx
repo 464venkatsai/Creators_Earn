@@ -1,5 +1,5 @@
 "use client"
-import React, { useContext, useEffect, useState } from "react";
+import React, { memo, useContext, useEffect, useState } from "react";
 import { AlertContext } from "../context/context";
 
 const ShowAlert = ({ message, time = 3000, className="bg-green-500",bottom="bg-[whitesmoke]" }) => {
@@ -30,4 +30,4 @@ const ShowAlert = ({ message, time = 3000, className="bg-green-500",bottom="bg-[
   );
 };
 
-export default ShowAlert;
+export default memo(ShowAlert);

@@ -1,6 +1,6 @@
 "use client"
 import { useRouter } from 'next/navigation'
-import React, { useEffect } from 'react'
+import React, { memo, useEffect } from 'react'
 
 const Library = () => {
   const router = useRouter();
@@ -14,4 +14,4 @@ const Library = () => {
   )
 }
 
-export default Library;
+export default memo(Library);

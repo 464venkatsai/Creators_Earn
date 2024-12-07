@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 
 const CommunityPage = () => {
   return (
@@ -8,4 +8,4 @@ const CommunityPage = () => {
   )
 }
 
-export default CommunityPage
+export default memo(CommunityPage)

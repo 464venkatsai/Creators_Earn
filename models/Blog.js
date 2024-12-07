@@ -1,10 +1,12 @@
 import mongoose from "mongoose";
 
 const BlogSchema = new mongoose.Schema({
+  blogId : {type: String, required: true},
+  userId:{type:String,required: true},
   title: { type: String, required: true },
   description: { type: String, required: true },
+  blogContent : {type:String, required:true},
   creatorName: { type: String, required: true },
-  creatorUserName: { type: String, required: true },
   tags: { type: [String], default: [] },
   date: { type: Date, default: Date.now },
 });

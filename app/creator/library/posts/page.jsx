@@ -1,18 +1,28 @@
 "use client";
-import { fetchBlogPosts } from "@/actions/useractions";
-import { UserContext } from "@/app/context/context";
+import { deleteBlogPost, fetchBlogPosts } from "@/actions/useractions";
+import { AlertContext, UserContext } from "@/app/context/context";
 import Link from "next/link";
-import React, { useContext, useEffect, useState } from "react";
+import React, { memo, useContext, useEffect, useState } from "react";
 
 const Posts = () => {
   const [post, setPost] = useState([]);
   const { user } = useContext(UserContext);
+  const {Alert,setAlert} = useContext(AlertContext);
+  
+  const handleDelete = async(id) => {
+    console.log(id)
+    await deleteBlogPost(id);
+    setAlert({...Alert,message:"Deleted Blog Successfully",time:3000});
+    let newPost = post;
+    newPost.pop(id);
+    setPost(newPost)
+  }
+  
   useEffect(() => {
     const fetchPosts = async () => {
       try {
         if (user?.name) {
           const blogPosts = await fetchBlogPosts(user.name);
-          console.log(blogPosts);
           setPost(blogPosts);
         }
       } catch (error) {
@@ -72,13 +82,14 @@ const Posts = () => {
                         );
                       })}
                     </div>
-                    <div>
-                      <Link href={"/creator/create"} className="w-full">
+                    <div className="flex gap-5">
+                      <Link href={`/creator/create/?id=${blog.blogId}`} className="w-full">
                         <button className="w-full border-[1px] rounded-lg border-solid border-gray-400 flex items-center justify-center leading-tight font-poppins font-[500] text-sm px-5 py-3 gap-2 shadow-inside hover:bg-[#e6e7ee]">
                           <img src="/create.svg" alt="create.svg" width={20} />
                           <h3 className="">Update</h3>
                         </button>
                       </Link>
+                      <button onClick={()=>handleDelete(blog.blogId,id)} className="w-full border-[1px] rounded-lg border-solid border-gray-400 flex items-center justify-center leading-tight font-poppins font-[500] text-sm px-5 py-3 gap-2 shadow-inside hover:bg-red-600 hover:text-white hover:shadow-none">Delete</button>
                     </div>
                   </div>
                 </div>
@@ -91,4 +102,4 @@ const Posts = () => {
   );
 };
 
-export default Posts;
+export default memo(Posts);

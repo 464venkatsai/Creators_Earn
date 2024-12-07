@@ -92,3 +92,21 @@
       width: 0%;
     }
   }
+  .ql-editor.ql-blank::before {
+    padding-left: 5rem;  /* Adjust padding as per your design */
+    padding-right: 5rem;
+    color: #888;    /* Optional: Customize the color of the placeholder text */
+  }
+
+  .quill-editor .ql-editor {
+    background-color: white; /* Example background for the Quill editor */
+    padding: 5rem 5rem; /* Example padding */
+    min-height: 100vh; /* Example min-height for editing area */
+  }
+  .quill-editor .ql-toolbar{
+    height: 10vh;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    
+  }

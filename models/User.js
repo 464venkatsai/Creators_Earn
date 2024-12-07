@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 
 const UserSchema = new mongoose.Schema({
     // All user fields
+    userId:{type:String,unique:true},
     name: String,
     email: String,
 });
