@@ -1,6 +1,6 @@
 import CreatorNavBar from "../components/CreatorNavBar";
 
-export default function CreatorLayout({ children }) {
+export default function BlogLayout({ children }) {
   return (
     <div className="flex bg-[#e6e7e9] min-w-screen h-screen">
       <div className="w-[19.5vw] mr-[1px]">

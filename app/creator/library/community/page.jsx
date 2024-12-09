@@ -2,8 +2,10 @@ import React, { memo } from 'react'
 
 const CommunityPage = () => {
   return (
-    <div>
-      Community Page
+    <div className='w-full min-h-screen'>
+      <div>
+        <h1>Explore</h1>
+      </div>
     </div>
   )
 }

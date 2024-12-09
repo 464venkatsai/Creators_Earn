@@ -5,7 +5,7 @@ import React, { memo, useState } from 'react'
 const LibraryNavbar = () => {
   const [activeLibary, setactiveLibary] = useState("posts")
   return (
-    <div className='w-full bg-white'>
+    <div className='w-full bg-white sticky top-0 z-[1000]'>
       <div className='pt-10'>
         <h1 className='text-[1.4rem] font-poppins font-semibold px-10 pt-10 pb-6 shadow'>Your Library</h1>
         <nav className='shadow-bottom'>

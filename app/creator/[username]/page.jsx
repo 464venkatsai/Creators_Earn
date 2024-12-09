@@ -10,7 +10,7 @@ const User = ({ params }) => {
     setUser((prevUser)=>({...prevUser,name:username}))
   }, [username,setUser])
   return (
-    <div className="w-full">
+    <div className="w-full overflow-y-scroll scrollable-none">
       <div className="min-h-[40vh] bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 relative">
         <div className="bg-blue-500 py-7 px-10 font-poppins font-bold w-max text-white absolute -bottom-[4.6rem] z-20 left-[46%] rounded-lg text-7xl">
           {username.charAt(0).toUpperCase()}

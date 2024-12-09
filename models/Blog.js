@@ -7,6 +7,8 @@ const BlogSchema = new mongoose.Schema({
   description: { type: String, required: true },
   blogContent : {type:String, required:true},
   creatorName: { type: String, required: true },
+  likes : {type:Number,required:true},
+  views : {type:Number, required: true},
   tags: { type: [String], default: [] },
   date: { type: Date, default: Date.now },
 });

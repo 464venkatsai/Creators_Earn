@@ -32,7 +32,16 @@ const Create = () => {
 
   const publish = async () => {
     try {
-      await createBlog(id||"BID"+randomUUID(),user.id,blog.title,blog.description,blog.blogContent,user.name);
+      let likes = 0;
+      let views = 0
+      if (id){
+        const blogPost = await getBlogPost(id);
+        if (blogPost){
+          views = blogPost.views+1
+          likes = blogPost.likes
+        }
+      }
+      await createBlog(id||"BID"+randomUUID(),user.id,blog.title,blog.description,blog.blogContent,user.name,likes,views);
       setAlert({ message: "Saved Blog Successfully", time: 3000 });
       console.log("Successfully Saved Blog");
     } catch (error) {
