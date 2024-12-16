@@ -17,7 +17,7 @@ const About = () => {
           <p className="font-nunito leading-relaxed text-lg">
             Creators Earn is a platform designed to empower creators by
             providing them with the tools and opportunities to monetize their
-            content and skills. Whether you're a writer, artist, or influencer,
+            content and skills. Whether you&apos;re a writer, artist, or influencer,
             Creators Earn helps you turn your passion into profit.
           </p>
         </div>

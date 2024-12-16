@@ -2,7 +2,49 @@
 
 import connectDB from "@/db/connectDB";
 import Blog from "@/models/Blog.js";
+import User from "@/models/User";
 
+// User CRUD Operations
+export const loginUser = async (email)=>{
+  await connectDB();
+  const user = await User.findOne({email:email});
+  if(!user){
+    throw new Error(`${email} doesn't exists`)
+  }
+  const plainUser = {
+    ...user.toObject(),
+    _id: user._id.toString(),
+  };
+  return plainUser
+}
+
+export const createUser = async (userId,email,password) => {
+  await connectDB();
+  const newUser = new User({
+    userId:userId,
+    name:userId,
+    email:email,
+    password:password,
+    tagLine: "",
+    profileImage:"",
+    coverImage:""
+  })
+  await newUser.save()
+}
+
+export const updateUser = async (name,password,tagLine,profileImage,coverImage) => {
+  await connectDB();
+  await Blog.findOneAndUpdate({
+    name:name,
+    password:password,
+    tagLine: tagLine,
+    profileImage:profileImage,
+    coverImage:coverImage
+  })
+}
+
+
+// Blog CRUD Operations
 export const createBlog = async (
   id,
   userId,
